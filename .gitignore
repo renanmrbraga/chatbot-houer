@@ -1,0 +1,14 @@
+# Ignorar variáveis de ambiente (credenciais sensíveis)
+.env
+
+# Ignorar ambiente virtual
+venv/
+
+# Ignorar volumes e cache do Docker
+pgdata/
+__pycache__/
+*.log
+*.db
+
+# Ignorar arquivos temporários do VSCode
+.vscode/

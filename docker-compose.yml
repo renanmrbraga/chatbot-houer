@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: streamlit_app
+    restart: always
+    volumes:
+      - .:/app:ro
+    ports:
+      - "8501:8501"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    networks:
+      - app_net
+
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - .env
+    networks:
+      - app_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
+
+networks:
+  app_net:
+    driver: bridge
