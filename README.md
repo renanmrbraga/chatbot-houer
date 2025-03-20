@@ -105,9 +105,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 ## Licença
 
 Este projeto está licenciado sob a Licença [APACHE](LICENSE).
-
-## Contato
-
-Renan Braga - [renanmrbraga](https://github.com/renanmrbraga)
-
-Projeto Link: [Chatbot Houer](https://github.com/renanmrbraga/chatbot-houer)
