@@ -76,18 +76,6 @@ GROQ_API_KEY=sua_api_key
 docker run --name chatbot_postgres -e POSTGRES_DB=chatbot -e POSTGRES_USER=seu_usuario -e POSTGRES_PASSWORD=sua_senha -p 5432:5432 -d postgres
 ```
 
-Crie a tabela `app_logs`:
-
-```sql
-CREATE TABLE app_logs (
-    id SERIAL PRIMARY KEY,
-    log_level VARCHAR(50),
-    message TEXT,
-    context VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
 ## Uso
 
 Inicie a aplicação:
