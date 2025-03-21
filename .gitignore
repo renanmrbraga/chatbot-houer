@@ -12,3 +12,6 @@ __pycache__/
 
 # Ignorar arquivos temporários do VSCode
 .vscode/
+
+# Ignorar nginx
+nginx/
